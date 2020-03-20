@@ -1,8 +1,9 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 ValueNotifier<GraphQLClient> getGraphQLClient() {
-  const String token = 'f2934c2f8911d84ceb2dd925460d873d317b8fad';
+  final String token = DotEnv().env['GITHUB_TOKEN'];
   final HttpLink httpLink = HttpLink(uri: 'https://api.github.com/graphql');
   final AuthLink authLink = AuthLink(getToken: () => 'Bearer $token');
   final Link link = authLink.concat(httpLink);

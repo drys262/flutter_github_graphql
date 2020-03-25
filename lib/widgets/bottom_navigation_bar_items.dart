@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 List<BottomNavigationBarItem> getBottomNavigationBarItems() {
   return <BottomNavigationBarItem>[
     BottomNavigationBarItem(
-      icon: Icon(Icons.home),
-      title: const Text('Home'),
+      icon: Icon(Icons.search),
+      title: const Text('Search'),
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.group),

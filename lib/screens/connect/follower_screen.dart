@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_github_graphql/library/queries.dart';
 import 'package:flutter_github_graphql/models/index.dart';
+import 'package:flutter_github_graphql/widgets/user_tile.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 class FollowerScreen extends StatelessWidget {
@@ -28,9 +29,6 @@ class FollowerScreen extends StatelessWidget {
           return const Text('Loading');
         }
 
-        print('results here');
-        print(result.data);
-
         final List<User> followers = (result.data['viewer']['followers']
                 ['nodes'] as List<dynamic>)
             .map((dynamic node) => User.fromJson(node as Map<String, dynamic>))
@@ -40,14 +38,8 @@ class FollowerScreen extends StatelessWidget {
           itemCount: followers.length,
           itemBuilder: (BuildContext context, int index) {
             final User follower = followers[index];
-            return ListTile(
-              leading: CircleAvatar(
-                backgroundImage: CachedNetworkImageProvider(follower.avatarUrl),
-              ),
-              title: follower.name != null
-                  ? Text(follower.name)
-                  : const Text('N/A'),
-              subtitle: Text(follower.email),
+            return UserTile(
+              user: follower,
             );
           },
         );

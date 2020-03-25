@@ -23,7 +23,7 @@ class Base extends StatelessWidget {
         )
       ],
       child: GraphQLProvider(
-        client: getGraphQLClient(),
+        client: getGraphQLClientValueNotifier(),
         child: const CacheProvider(child: App()),
       ),
     );

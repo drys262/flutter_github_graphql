@@ -4,6 +4,7 @@ import 'package:flutter_github_graphql/library/graphql-client.dart';
 import 'package:flutter_github_graphql/view_models/app/app_model.dart';
 import 'package:flutter_github_graphql/screens/app.dart';
 import 'package:flutter_github_graphql/view_models/connect/connect_model.dart';
+import 'package:flutter_github_graphql/view_models/profile/profile_model.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
@@ -20,6 +21,9 @@ class Base extends StatelessWidget {
         ),
         ChangeNotifierProvider<ConnectModel>(
           create: (_) => locator<ConnectModel>(),
+        ),
+        ChangeNotifierProvider<ProfileModel>(
+          create: (_) => locator<ProfileModel>(),
         )
       ],
       child: GraphQLProvider(

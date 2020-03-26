@@ -9,17 +9,18 @@ class UserTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: CircleAvatar(
-        backgroundImage: user.avatarUrl != null
-            ? CachedNetworkImageProvider(user.avatarUrl)
-            : const AssetImage('assets/blank-profile.webp') as ImageProvider,
-        // backgroundImage: user.avatarUrl != null
-        //     ? CachedNetworkImageProvider(user.avatarUrl)
-        //     : const AssetImage('assets/blank-profile.webp'),
+    return GestureDetector(
+      onTap: () {},
+      child: ListTile(
+        leading: CircleAvatar(
+          backgroundImage: user.avatarUrl != null
+              ? CachedNetworkImageProvider(user.avatarUrl)
+              : const AssetImage('assets/blank-profile.webp') as ImageProvider,
+        ),
+        title: user.name != null ? Text(user.name) : const Text('N/A'),
+        subtitle:
+            user.email != null ? Text(user.email) : const Text('No email'),
       ),
-      title: user.name != null ? Text(user.name) : const Text('N/A'),
-      subtitle: user.email != null ? Text(user.email) : const Text('No email'),
     );
   }
 }

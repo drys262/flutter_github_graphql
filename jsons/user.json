@@ -2,5 +2,15 @@
   "databaseId": 2496253,
   "avatarUrl": "https://avatars0.githubusercontent.com/u/2496253?u=f98d094df384cdf944ecf2247959ae07999d9275&v=4",
   "email": "nirkaufman@gmail.com",
-  "name": "Nir Kaufman"
+  "name": "Nir Kaufman",
+  "login": "drys262",
+  "followers": {
+    "totalCount": 1
+  },
+  "following": {
+    "totalCount": 2
+  },
+  "repositories": {
+    "totalCount": 2
+  }
 }

@@ -18,9 +18,7 @@ class AppModelImplementation extends AppModel {
       title: const Text('Search'),
     ),
     null,
-    PlatformAppBar(
-      title: const Text('Profile'),
-    ),
+    null
   ];
 
   @override

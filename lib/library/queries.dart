@@ -72,3 +72,24 @@ query SearchRepos(\$query: String!, \$type: SearchType!, \$first: Int) {
   }
 }
 ''';
+
+String getUserProfileQuery = '''
+query {
+  viewer {
+    databaseId
+    avatarUrl
+    login
+    name
+    email
+    followers {
+        totalCount
+    }
+    following {
+        totalCount
+    }
+    repositories {
+        totalCount
+    }
+  }
+}
+''';

@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_github_graphql/models/index.dart';
+import 'package:flutter_github_graphql/screens/profile/user_profile_screen.dart';
 
 class UserTile extends StatelessWidget {
   final User user;
@@ -10,7 +11,16 @@ class UserTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push<dynamic>(
+          context,
+          MaterialPageRoute<dynamic>(
+            builder: (BuildContext context) => UserProfileScreen(
+              currentUser: user,
+            ),
+          ),
+        );
+      },
       child: ListTile(
         leading: CircleAvatar(
           backgroundImage: user.avatarUrl != null

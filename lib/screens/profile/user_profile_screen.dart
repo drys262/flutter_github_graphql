@@ -39,9 +39,6 @@ class UserProfileScreen extends StatelessWidget {
               elevation: 0.0,
               backgroundColor: Colors.transparent,
             ),
-            drawer: Drawer(
-              child: Container(),
-            ),
             backgroundColor: Colors.transparent,
             body: Center(
               child: Column(

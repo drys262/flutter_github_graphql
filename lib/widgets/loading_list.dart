@@ -21,7 +21,7 @@ class LoadingListShimmer extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: <Widget>[
                       Container(
                         width: 48.0,
                         height: 48.0,

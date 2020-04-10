@@ -12,8 +12,18 @@ String getFollowersQuery = '''
               nodes {
                   databaseId
                   avatarUrl
-                  email
+                  login
                   name
+                  email
+                  followers {
+                      totalCount
+                  }
+                  following {
+                      totalCount
+                  }
+                  repositories {
+                      totalCount
+                  }
               }
           }
       }
@@ -34,8 +44,18 @@ String getFollowingsQuery = '''
             nodes {
                 databaseId
                 avatarUrl
-                email
+                login
                 name
+                email
+                followers {
+                    totalCount
+                }
+                following {
+                    totalCount
+                }
+                repositories {
+                    totalCount
+                }
             }
         }
       }
@@ -48,11 +68,20 @@ query SearchRepos(\$query: String!, \$type: SearchType!, \$first: Int) {
       edges {
           node {
             ... on User {
-              name
               databaseId
-              login
-              email
               avatarUrl
+              login
+              name
+              email
+              followers {
+                  totalCount
+              }
+              following {
+                  totalCount
+              }
+              repositories {
+                  totalCount
+              }
               
             }
             ... on Repository {
